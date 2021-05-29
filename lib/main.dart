@@ -1,16 +1,65 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  Map data={
+    'names':['Minhaj','Fahad','Tanveer','Ramesh','Iqra','Hibba'],
+    'Coutities':{
+      'Male teacher':2,
+      'FeMale teacher':0,
+      'Male Students':2,
+      'FeMale Students':2,
+    }
+  };
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(      
       home:Scaffold(
-      
+        backgroundColor:Colors.transparent,
+        appBar: AppBar(
+          title: Text('Login Page',style: TextStyle(
+            color:Colors.black
+          ),),
+          centerTitle: true,
+          backgroundColor:Colors.transparent,
+        ),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.green,Colors.blue]
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 40,),
+              TextField(
+                decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Email'
+  ),
+),
+              SizedBox(height: 50,),
+              TextField(
+                decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Password'
+  ),
+),
+              SizedBox(height: 20,),
+              FlatButton.icon(onPressed:(){}, icon: Icon(Icons.login_rounded), label:Text('login'))
+            ],
+          ),
+        )
+        ),
     );
   }
 }
@@ -128,3 +177,49 @@ class MyApp extends StatelessWidget {
         //     ],),
         //   ),
         // )              )
+
+
+
+
+
+
+
+
+
+
+
+
+// code 4 Top and Bottom Bar
+  //       appBar: AppBar(
+  //       actions:[
+  //         IconButton(
+  //           icon: const Icon(Icons.add_alert),
+  //           tooltip: 'Show Snackbar',
+  //           onPressed: () {
+  //             print('google');
+  //           },
+  //         ),],
+  //         title:Text('My First App',
+  //           style: TextStyle(color:Colors.green,
+  //           fontSize: 30.0,
+  //           ),
+  //           ),
+  //         centerTitle:true,
+  //         backgroundColor: Colors.lime,
+  //         toolbarOpacity: 0.4,
+  //       ),
+  //        bottomNavigationBar: BottomAppBar(
+  //   child: Row(
+  //     children: [
+  //       IconButton(icon: Icon(Icons.add), onPressed: () { print( 'add icon' );}),
+  //       Spacer(),
+  //       IconButton(icon: Icon(Icons.search), onPressed: () { print( data['Coutities']['Male Students'] );}),
+  //       IconButton(icon: Icon(Icons.more_vert), onPressed: () {for(var i=1;i<=5;i++){
+  //         print(data['names'][4]);
+  //       }}),
+  //     ],
+  //   ),
+  // ),
+  // floatingActionButton:
+  //     FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
+  // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
