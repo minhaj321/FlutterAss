@@ -1,70 +1,109 @@
+// import './screens/data.dart';
+// import './screens/home.dart';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
+// import 'package:fuluttertest/screens/Reuse.dart';
+// import './screens/change.dart';
+// import 'package:firebase_database/firebase_database.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import './screens/Reuse.dart';
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  Map data={
-    'names':['Minhaj','Fahad','Tanveer','Ramesh','Iqra','Hibba'],
-    'Coutities':{
-      'Male teacher':2,
-      'FeMale teacher':0,
-      'Male Students':2,
-      'FeMale Students':2,
-    }
-  };
+  var list=['Minhaj','Mubha','Ayesha','Umaima'];
+// var DBRef = FirebaseDatabase.instance.reference();
+// DBRef.child('/').set({
+//   'name':'Muniba Mazari'
+// }); 
+  // Map data={
+  //   'names':['Minhaj','Fahad','Tanveer','Ramesh','Iqra','Hibba'],
+  //   'Coutities':{
+  //     'Male teacher':2,
+  //     'FeMale teacher':0,
+  //     'Male Students':2,
+  //     'FeMale Students':2,
+  //   }
+  // };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(      
-      home:Scaffold(
-        backgroundColor:Colors.transparent,
-        appBar: AppBar(
-          title: Text('Login Page',style: TextStyle(
-            color:Colors.black
-          ),),
-          centerTitle: true,
-          backgroundColor:Colors.transparent,
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.green,Colors.blue]
-            ),
+        home:Scaffold(
+          appBar: AppBar(
+            title:TabBar(
+              tabs: [
+                Tab(child:Text('good')),
+                Tab(child:Text('evening')),
+              ],
+            )
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 40,),
-              TextField(
-                decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Email'
-  ),
-),
-              SizedBox(height: 50,),
-              TextField(
-                decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Password'
-  ),
-),
-              SizedBox(height: 20,),
-              FlatButton.icon(onPressed:(){}, icon: Icon(Icons.login_rounded), label:Text('login'))
-            ],
-          ),
+          body: Text('minhaj')
+
         )
-        ),
     );
   }
 }
 
+// Routing
+      // title: 'Routing',
+      // initialRoute: '/change',
+      // routes: {
+      //   '/':(context)=>Home('Main'),
+      //   '/data':(context)=>Data(),
+      //   '/change':(context)=>Change(),
+      // },
 
+
+
+// Drawer          
+          // appBar: AppBar(
+          //   title: Text('Nothing'),
+          //   centerTitle: true,
+          // ),
+          // drawer: Drawer(
+          //   child: ListView(
+          //     children: [
+          //       DrawerHeader(child:Image.network('img')),
+          //       ListTile(title:Text('Mubha')),
+          //       ListTile(subtitle:Text('Mubha')),
+          //       GestureDetector(
+          //         child:ListTile(subtitle:Text('Mubha')),
+          //         onLongPress: (){print('good');},
+          //         )
+          //       ],
+          //   ),
+          // ),
+
+
+// Grid View          
+          // GridView.count(
+          //   crossAxisCount: 3,
+          //   crossAxisSpacing: 20,
+          //   mainAxisSpacing: 30,
+          //   children:List.generate(list.length, (index){
+          //     return Container(
+          //         color:Colors.green,
+          //         height: 100,
+          //         width: 100,
+          //   );
+          // }),
+          // ),
+
+// List View
+// ListView.builder(
+//             itemCount: list.length,
+//             itemBuilder: (content,index){
+//                 return Padding(
+//                   padding: const EdgeInsets.all(8.0),
+//                   child: Container(
+//                     height: 30,
+//                     width: 30,
+//                     color: Colors.amber,
+//                     child:Text(list[index]) ),
+//                 );
+//             })
 
 // code 1
 // Container(
@@ -133,59 +172,11 @@ class MyApp extends StatelessWidget {
         //         SizedBox(
         //           height:40,
         //         ),
-        //         Container(
-        //           height: 100,
-        //           width: 100,
-        //           color: Colors.red,
-        //         ),
-        //         SizedBox(
-        //           height:40,
-        //         ),
-        //         Container(
-        //           height: 100,
-        //           width: 100,
-        //           color: Colors.blueGrey,
-        //         ),
-        //         SizedBox(
-        //           height:40,
-        //         ),
-        //         Container(
-        //           height: 100,
-        //           width: 100,
-        //           color: Colors.brown,
-        //         ),
-        //         SizedBox(
-        //           height:40,
-        //         ),
-        //         Container(
-        //           height: 100,
-        //           width: 100,
-        //           color: Colors.cyan,
-        //         ),
-        //         SizedBox(
-        //           height:40,
-        //         ),
-        //         Container(
-        //           height: 100,
-        //           width: 100,
-        //           color: Colors.yellow,
-        //         ),
-        //         SizedBox(
-        //           height:40,
-        //         )
+
               
         //     ],),
         //   ),
         // )              )
-
-
-
-
-
-
-
-
-
 
 
 
